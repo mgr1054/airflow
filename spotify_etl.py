@@ -9,7 +9,7 @@ from plugins.create import writeIntoDB
 
 def run_spotify_etl():
     # Valid for one hour
-    TOKEN = 'BQBvxUY1zhHH09dJ5baTgvJr6W8wavbpZenHekkN2YYbEemTx16kios6glL5nYq6PXV_koQ6il0fCd7G2ya4WA_TvmQgLGmdcr9TUg2s7XNxAEvcucVUnw9bxQXqCi2NuPMLnyAhiHL_sRMSUI9kJUNCLAgrDY7W5eWLCrBp7sa4gVcTsWdudHyxdkGv62M1hJfMHe_-HeeFLyQrfRZviv6I'
+    TOKEN = 'BQD0X62SZ0qq_YDTbzeaKW1RCoyH5U62z6jrKZV5ynrCzmN07ipzwYC46Vz-CjCMtKWEbeK6llHmfXG5TgBWS9TSe1YuXhikPTi2iKzjHyyhxuH5Q1A5cqemVt_0J3Mk8mYKivhmZ52bjn_HcAvdXJGJvgNPuBYj5MxHuA0_7wdYqCQiZyIbpnhn6qcuoDBthW3IGjc3N4-45bItdCPW9_kg'
     # Global Charts
     PLAYLIST_ID = '37i9dQZEVXbNG2KDcFcKOF'
     
@@ -58,6 +58,7 @@ def run_spotify_etl():
     }
 
     song_df = pd.DataFrame(song_dict, columns = ["place", "song_name", "artist_name", "album_name", "album_release", "song_popularity", "timestamp"])
-    writeIntoDB(song_df)
+    print(song_df)
+    # writeIntoDB(song_df)
 
 run_spotify_etl()
